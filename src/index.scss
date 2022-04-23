@@ -1,0 +1,64 @@
+@import "assets/styles/fonts";
+@import "assets/styles/main";
+@import "assets/styles/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'SourceSansProRegular', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  //background-color: $main-blue;
+}
+
+h1, h2, h3, p {
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: SourceSansProBold;
+  font-size: 40px;
+  line-height: 56px;
+}
+
+
+h2 {
+  font-family: SourceSansProSemiBold;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+h3 {
+  font-size: 24px;
+  font-family: SourceSansProSemiBold;
+  line-height: 28px;
+}
+
+p, a {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@import "assets/styles/media";
