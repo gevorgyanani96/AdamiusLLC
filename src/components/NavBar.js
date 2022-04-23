@@ -25,6 +25,7 @@ function NavBar({ aboutRef, contactRef }) {
         } else if (type === 'about') {
             aboutRef.current.scrollIntoView({ behavior: "smooth" })
         }
+        setClick(!click);
     };
 
     return (
