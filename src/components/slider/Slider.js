@@ -27,31 +27,24 @@ function Slider() {
     ];
     const services = [service1, service2, service3, service4, service5];
     const [x, setX] = useState(0);
-    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         setInterval(() => {
             setX(old => {
                 return old === (-100 * (sliderLength - 1)) ? 0 : old - 100
             });
-            setIndex(old => {
-                return old === sliderLength - 1 ? 0 : old + 1
-            });
-        }, 5000);
+        }, 6000);
     }, []);
 
     const goLeft = () => {
         setX(x + 100);
         x === 0 ? setX(-100 * (sliderArr.length - 1)) : setX(x + 100);
-        x === 0 ? setIndex(sliderArr.length - 1) : setIndex(index - 1);
     };
     const goRight = () => {
         (x === -100 * (sliderArr.length - 1)) ? setX(0) : setX(x - 100);
-        (x === -100 * (sliderArr.length - 1)) ? setIndex(0) : setIndex(index + 1);
     };
     const change = (i) => {
         i === 0 ? setX(0) : setX(-100 * i);
-        setIndex(i);
     };
 
     return (
@@ -76,8 +69,8 @@ function Slider() {
             </div>
             <div className='slider-content d-flex flex-column justify-between'>
                 <div className='header'>
-                    <h1 className='font-face-bold'>{SliderData[index] && SliderData[index].header}</h1>
-                    <h2>{SliderData[index] && SliderData[index].description}</h2>
+                    <h1 className='font-face-bold'>{SliderData[x === 0 ? 0 : -(x / 100)] && SliderData[x === 0 ? 0 : -(x / 100)].header}</h1>
+                    <h2>{SliderData[x === 0 ? 0 : -(x / 100)] && SliderData[x === 0 ? 0 : -(x / 100)].description}</h2>
                 </div>
                 <div className='services-container'>
                     {
@@ -85,7 +78,7 @@ function Slider() {
                             return (
                                 <div className='service-item' key={i}>
                                     <Service src={item}
-                                             active={i === index}
+                                             active={i === (x === 0 ? 0 : -(x / 100))}
                                              onChange={() => {
                                                  change(i)
                                              }}
