@@ -17,7 +17,7 @@
     width: 100%;
     top: 188px;
     height: calc(100% - 188px);
-    padding-bottom: 45px;
+    padding-bottom: 57px;
     .header {
       padding: 0 23%;
       margin-bottom: 15px;
@@ -54,12 +54,12 @@
   }
 
   #leftBtn {
-    left: 41px;
+    left: 40px;
     @extend %btn-styles;
   }
 
   #rightBtn {
-    right: 41px;
+    right: 40px;
     @extend %btn-styles;
   }
 }
@@ -68,6 +68,7 @@
   .slider {
     min-height: 680px;
     .slider-content {
+      padding-bottom: 70px;
       .header {
         padding-left: 18%;
         padding-right: 18%;
@@ -88,6 +89,17 @@
         }
       }
     }
+    #leftBtn {
+      left: 54px;
+    }
+    #rightBtn {
+      right: 54px;
+    }
+    #leftBtn, #rightBtn {
+      svg {
+        width: 12px;
+      }
+    }
   }
 }
 
@@ -96,6 +108,9 @@
     min-height: 540px;
     height: 540px;
     .slider-content {
+      top: 148px;
+      height: calc(100% - 148px);
+      padding-bottom: 32px;
       .header {
         padding-left: 13%;
         padding-right: 13%;
@@ -113,26 +128,30 @@
         }
       }
     }
-  }
-}
-
-@media screen and (max-width: 970px) {
-  .slider {
-    min-height: 670px;
-    height: 670px;
+    #leftBtn {
+      left: 39px;
+    }
+    #rightBtn {
+      right: 39px;
+    }
+    #leftBtn, #rightBtn {
+      svg {
+        width: 10px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .slider {
+    min-height: 652px;
+    height: 652px;
     .slider-content {
-      top: 180px;
-      height: calc(100% - 180px);
-      padding-bottom: 40px;
+      top: 214px;
+      height: calc(100% - 214px);
+      justify-content: center;
       .header {
-        h2 {
-          line-height: 32px;
-        }
+        margin-bottom: 34px;
       }
       .services-container {
         .service-item {
@@ -141,20 +160,64 @@
             display: block;
             cursor: auto;
             margin: 0;
-            width: 236px;
+            width: 200px;
             max-width: 100%;
-            min-height: 212px;
+            min-height: 176px;
           }
         }
       }
+    }
+    #leftBtn {
+      left: 34px;
+    }
+    #rightBtn {
+      right: 34px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider {
+    min-height: 652px;
+    height: 652px;
+    .slider-content {
+      justify-content: space-between;
+      .services-container {
+        .service-item {
+          &.mobile-item {
+            width: 180px;
+            min-height: 156px;
+          }
+        }
+      }
+    }
+    #leftBtn {
+      left: 20px;
+    }
+    #rightBtn {
+      right: 20px;
     }
   }
 }
 
 
-@media screen and (max-width: 476px) {
+@media screen and (max-width: 375px) {
   .slider {
-    min-height: 700px;
-    height: 700px;
+    .slider-content {
+      top: 164px;
+      height: calc(100% - 164px);
+      .header {
+        margin-bottom: 12px;
+        h2 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    #leftBtn, #rightBtn {
+      svg {
+        width: 7px;
+      }
+    }
   }
 }

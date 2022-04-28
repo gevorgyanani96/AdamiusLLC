@@ -7,11 +7,11 @@
   h1 {
     margin-bottom: 10px;
   }
+  > p {
+    display: none;
+  }
   .contact-description {
     margin-bottom: 82px;
-    &:first-child {
-      display: none;
-    }
   }
   .contacts {
     .contacts-item {

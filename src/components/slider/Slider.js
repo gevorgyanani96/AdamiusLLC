@@ -52,6 +52,9 @@ function Slider() {
 
     return (
         <div className='slider d-flex align-center'>
+
+
+
             {
                 sliderArr.map((item, index) => {
                     return (
@@ -70,6 +73,8 @@ function Slider() {
                     0L0.000312805 2.82Z" fill="white"/>
                 </svg>
             </div>
+
+
             <div className='slider-content d-flex flex-column justify-between'>
                 <div className='header'>
                     <h1 className='font-face-bold'>{SliderData[x === 0 ? 0 : -(x / 100)] && SliderData[x === 0 ? 0 : -(x / 100)].header}</h1>
