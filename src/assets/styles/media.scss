@@ -1,33 +1,36 @@
 @media screen and(max-width: 1200px) {
   h1 {
-    font-size: 33px;
-    line-height: 46px;
+    font-size: 32px;
   }
 
   h2 {
-    font-size: 22px;
-    line-height: 29px;
-  }
-
-  h3 {
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 24px;
   }
 }
 
-@media screen and(max-width: 768px) {
+@media screen and(max-width: 992px) {
   h1 {
-    font-size: 28px;
-    line-height: 39px;
+    font-size: 24px;
   }
 
   h2 {
     font-size: 20px;
-    line-height: 26px;
+  }
+  p, a {
+    font-size: 16px;
+  }
+}
+
+@media screen and(max-width: 576px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
   }
 
   h3 {
     font-size: 18px;
-    line-height: 21px;
   }
 }

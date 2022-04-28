@@ -33,7 +33,7 @@ function Slider() {
             setX(old => {
                 return old === (-100 * (sliderLength - 1)) ? 0 : old - 100
             });
-        }, 6000);
+        }, 5000);
     }, []);
 
     const goLeft = () => {
@@ -44,6 +44,9 @@ function Slider() {
         (x === -100 * (sliderArr.length - 1)) ? setX(0) : setX(x - 100);
     };
     const change = (i) => {
+        if (window.innerWidth <= 768) {
+            return;
+        }
         i === 0 ? setX(0) : setX(-100 * i);
     };
 
@@ -76,7 +79,7 @@ function Slider() {
                     {
                         services.map((item, i) => {
                             return (
-                                <div className='service-item' key={i}>
+                                <div className={i === (x === 0 ? 0 : -(x / 100)) ? 'service-item mobile-item' : 'service-item'} key={i}>
                                     <Service src={item}
                                              active={i === (x === 0 ? 0 : -(x / 100))}
                                              onChange={() => {

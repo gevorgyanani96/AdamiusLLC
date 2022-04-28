@@ -4,7 +4,7 @@
   background-color: $main-blue;
   .footer-container {
     .additional-info-container {
-      padding: 56px 27% 168px;
+      padding: 56px 27% 102px;
       p {
         letter-spacing: 0.02em;
         color: $main-gray;
@@ -13,7 +13,7 @@
         width: 24px;
         height: 1.4px;
         background-color: #ffffff;
-        margin: 40px 0;
+        margin: 50px 0;
       }
     }
     .social-btn-container {
@@ -61,17 +61,7 @@
   .footer {
     .footer-container {
       .additional-info-container {
-        padding: 3.9% 27% 11.7%;
-        .line {
-          margin-top: 30px;
-          margin-bottom: 30px;
-        }
-      }
-      .social-btn-container {
-        .social-btn {
-          width: 40px;
-          height: 40px;
-        }
+        padding-top: 40px;
       }
     }
   }
@@ -82,7 +72,8 @@
   .footer {
     .footer-container {
       .additional-info-container {
-        padding: 7% 21% 11.7%;
+        padding-left: 21%;
+        padding-right: 21%;
       }
     }
   }
@@ -93,13 +84,8 @@
   .footer {
     .footer-container {
       .additional-info-container {
-        padding: 9% 6% 13%;
-      }
-      .social-btn-container {
-        .social-btn {
-          width: 36px;
-          height: 36px;
-        }
+        padding-left: 6%;
+        padding-right: 6%;
       }
     }
   }
