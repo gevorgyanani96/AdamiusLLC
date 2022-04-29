@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Slider.scss';
 import SliderImg from "./SliderImg";
 import Service from "./Service";
@@ -27,42 +27,49 @@ function Slider() {
     ];
     const services = [service1, service2, service3, service4, service5];
     const [x, setX] = useState(0);
-    const timer = useRef();
+    const [stopIndex, setStopIndex] = useState(null);
+    const timeoutRef = React.useRef(null);
 
-    useEffect(() => {
-        autoPlay()
-    }, []);
 
-    function autoPlay() {
-        if (window.innerWidth <= 768) {
-            return;
+    function resetTimeout() {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
         }
-        timer.current = setInterval(() => {
-            setX(old => {
-                return old === (-100 * (sliderLength - 1)) ? 0 : old - 100
-            });
-        }, 5000);
     }
 
+    useEffect(() => {
+        resetTimeout();
+        if (!stopIndex && stopIndex !== 0 && window.innerWidth > 768) {
+            timeoutRef.current = setTimeout(
+                () => {
+                    setX(old => {
+                        return old === (-100 * (sliderLength - 1)) ? 0 : old - 100
+                    });
+                }, 4000);
+        } else {
+            resetTimeout();
+        }
+        return () => {
+            resetTimeout();
+        };
+    }, [x, stopIndex]);
+
     const goLeft = () => {
-        setX(x + 100);
         x === 0 ? setX(-100 * (sliderArr.length - 1)) : setX(x + 100);
-        autoPlay()
+        setStopIndex(null)
     };
+
     const goRight = () => {
         (x === -100 * (sliderArr.length - 1)) ? setX(0) : setX(x - 100);
-        autoPlay()
-    };
-    const change = (i) => {
-        clearInterval(timer.current);
-        i === 0 ? setX(0) : setX(-100 * i);
+        setStopIndex(null)
     };
 
+    const change = (i) => {
+        i === 0 ? setX(0) : setX(-100 * i);
+        i === stopIndex ? setStopIndex(null) : setStopIndex(i);
+    };
     return (
         <div className='slider d-flex align-center'>
-
-
-
             {
                 sliderArr.map((item, index) => {
                     return (
