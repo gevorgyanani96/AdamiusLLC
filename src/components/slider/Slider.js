@@ -34,6 +34,9 @@ function Slider() {
     }, []);
 
     function autoPlay() {
+        if (window.innerWidth <= 768) {
+            return;
+        }
         timer.current = setInterval(() => {
             setX(old => {
                 return old === (-100 * (sliderLength - 1)) ? 0 : old - 100
@@ -51,9 +54,6 @@ function Slider() {
         autoPlay()
     };
     const change = (i) => {
-        if (window.innerWidth <= 768) {
-            return;
-        }
         clearInterval(timer.current);
         i === 0 ? setX(0) : setX(-100 * i);
     };
