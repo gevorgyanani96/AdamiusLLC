@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.8699cbdf.css",
-    "main.js": "/dev/static/js/main.450b7241.js",
+    "main.css": "/dev/static/css/main.80fc8160.css",
+    "main.js": "/dev/static/js/main.d37fb5ac.js",
     "static/media/slider1.png": "/dev/static/media/slider1.31ed291ce211a52d2ade.png",
     "static/media/slider5.png": "/dev/static/media/slider5.715c76954c263ca500b1.png",
     "static/media/slider4.png": "/dev/static/media/slider4.0b38b1289b7b166642cf.png",
@@ -20,11 +20,11 @@
     "static/media/service4.svg": "/dev/static/media/service4.50d33e4b694e50781a539b60ad096777.svg",
     "index.html": "/dev/index.html",
     "static/media/marker.svg": "/dev/static/media/marker.cdfbf84bd8f9f95413eb3f9e234b5daf.svg",
-    "main.8699cbdf.css.map": "/dev/static/css/main.8699cbdf.css.map",
-    "main.450b7241.js.map": "/dev/static/js/main.450b7241.js.map"
+    "main.80fc8160.css.map": "/dev/static/css/main.80fc8160.css.map",
+    "main.d37fb5ac.js.map": "/dev/static/js/main.d37fb5ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.8699cbdf.css",
-    "static/js/main.450b7241.js"
+    "static/css/main.80fc8160.css",
+    "static/js/main.d37fb5ac.js"
   ]
 }
