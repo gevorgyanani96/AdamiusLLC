@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Slider.scss';
 import SliderImg from "./SliderImg";
 import Service from "./Service";
@@ -27,26 +27,34 @@ function Slider() {
     ];
     const services = [service1, service2, service3, service4, service5];
     const [x, setX] = useState(0);
+    const timer = useRef();
 
     useEffect(() => {
-        setInterval(() => {
+        autoPlay()
+    }, []);
+
+    function autoPlay() {
+        timer.current = setInterval(() => {
             setX(old => {
                 return old === (-100 * (sliderLength - 1)) ? 0 : old - 100
             });
         }, 5000);
-    }, []);
+    }
 
     const goLeft = () => {
         setX(x + 100);
         x === 0 ? setX(-100 * (sliderArr.length - 1)) : setX(x + 100);
+        autoPlay()
     };
     const goRight = () => {
         (x === -100 * (sliderArr.length - 1)) ? setX(0) : setX(x - 100);
+        autoPlay()
     };
     const change = (i) => {
         if (window.innerWidth <= 768) {
             return;
         }
+        clearInterval(timer.current);
         i === 0 ? setX(0) : setX(-100 * i);
     };
 
